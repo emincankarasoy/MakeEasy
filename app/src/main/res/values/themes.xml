@@ -10,9 +10,14 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
     </style>
 
-    <style name="Theme.MakeEasy.FullScreen" parent="@style/Theme.MakeEasy">
+    <style name="Theme.MakeEasy.Start" parent="Theme.SplashScreen">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="windowSplashScreenBackground">@color/colorPrimary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen_animation_icon</item>
+        <item name="windowSplashScreenAnimationDuration">600</item>
+        <item name="postSplashScreenTheme">@style/Theme.MakeEasy</item>
     </style>
+
 
 </resources>
