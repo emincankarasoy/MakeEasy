@@ -2,13 +2,9 @@ package com.emincankarasoy.makeeasy.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.window.SplashScreen
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.lifecycle.lifecycleScope
-import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.ui.view.ApplicationActivity
-import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(){
 
@@ -20,9 +16,7 @@ class MainActivity : AppCompatActivity(){
         finish()
 
     }
-
     private fun goToNextScreen(){
         startActivity(Intent(this, ApplicationActivity::class.java))
-        finish()
     }
 }
