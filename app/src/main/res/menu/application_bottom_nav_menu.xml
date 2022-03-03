@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/homeFragment"
-        android:title="Home"
+        android:title="@string/menu_home"
         android:icon="@drawable/ic_round_home"/>
 
     <item android:id="@+id/walletFragment"
-        android:title="Wallet"
-        android:icon="@drawable/ic_round_wallet"/>
+        android:title="@string/menu_wallet"
+        android:icon="@drawable/ic_round_wallet"
+        />
 
     <item android:id="@+id/taskFragment"
-        android:title="Task"
+        android:title="@string/menu_task"
         android:icon="@drawable/ic_round_task"/>
 
     <item android:id="@+id/profileFragment"
-        android:title="Profile"
+        android:title="@string/menu_profile"
         android:icon="@drawable/ic_round_person"/>
 
 

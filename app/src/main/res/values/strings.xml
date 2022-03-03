@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MakeEasy</string>
     <string name="splash_logo">splash_logo</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_task">Task</string>
+    <string name="menu_profile">Profile</string>
+    <string name="wallet_accounts">Accounts</string>
+    <string name="wallet_incoming">INCOMING</string>
+    <string name="wallet_outcoming">OUTCOMING</string>
 </resources>
