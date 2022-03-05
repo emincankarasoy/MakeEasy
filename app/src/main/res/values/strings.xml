@@ -8,4 +8,6 @@
     <string name="wallet_accounts">Accounts</string>
     <string name="wallet_incoming">INCOMING</string>
     <string name="wallet_outcoming">OUTCOMING</string>
+    <string name="wallet_toolbar_menu_add">Add</string>
+    <string name="wallet_toolbar_menu_detail">Detail</string>
 </resources>
