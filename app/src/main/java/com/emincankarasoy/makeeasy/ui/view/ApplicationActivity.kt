@@ -1,9 +1,11 @@
 package com.emincankarasoy.makeeasy.ui.view
 
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -14,16 +16,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class ApplicationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityApplicationBinding
+    private lateinit var navController : NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityApplicationBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_application)
 
         val navHost = supportFragmentManager.findFragmentById(R.id.applicationNavHostFragment) as NavHostFragment
-        val navController = navHost.navController
+        navController = navHost.navController
 
-        setupToolbar(navController)
+        setupToolbar()
         setupBottomNavigationView(navController)
         setupDestinationChangedListener(navController)
     }
@@ -33,7 +35,7 @@ class ApplicationActivity : AppCompatActivity() {
         bottomNavigationView?.setupWithNavController(navController)
     }
 
-    private fun setupToolbar(navController: NavController){
+    private fun setupToolbar(){
         val appBarConfiguration = AppBarConfiguration(
             setOf(R.id.homeFragment,
                 R.id.walletFragment,
@@ -57,7 +59,6 @@ class ApplicationActivity : AppCompatActivity() {
                 //Task Fragment Tool Bar Configuration
                 R.id.taskFragment -> {
                     binding.applicationToolbar.menu.clear()
-
                 }
                 //Profile Fragment Tool Bar Configuration
                 R.id.profileFragment -> {
