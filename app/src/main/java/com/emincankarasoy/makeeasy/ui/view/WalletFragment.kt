@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.FragmentWalletBinding
 import com.emincankarasoy.makeeasy.ui.adapter.WalletPagerAdapter
@@ -42,11 +40,22 @@ class WalletFragment : Fragment() {
 
         binding.walletViewPager.adapter = walletPagerAdapter
 
+        binding.walletViewPager.currentItem = savedInstanceState?.getInt("walletState")?: 0
+
         TabLayoutMediator(binding.walletTabLayout,binding.walletViewPager){ tab , position ->
             when(position){
-                0 -> tab.text = "Account"
-                1 -> tab.text = "Incoming"
-                2 -> tab.text = "Outcoming"
+                0 -> {
+                    tab.text = "Account"
+                    savedInstanceState?.putInt("walletState",0)
+                }
+                1 -> {
+                    tab.text = "Incoming"
+                    savedInstanceState?.putInt("walletState",1)
+                }
+                2 -> {
+                    tab.text = "Outcoming"
+                    savedInstanceState?.putInt("walletState",2)
+                }
             }
         }.attach()
     }
