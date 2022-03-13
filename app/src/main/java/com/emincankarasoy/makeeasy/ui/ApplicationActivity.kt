@@ -1,8 +1,9 @@
-package com.emincankarasoy.makeeasy.ui.view
+package com.emincankarasoy.makeeasy.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -19,7 +20,10 @@ class ApplicationActivity : AppCompatActivity() {
     private lateinit var navController : NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+        splashScreen.setKeepOnScreenCondition { true }
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_application)
 
         val navHost = supportFragmentManager.findFragmentById(R.id.applicationNavHostFragment) as NavHostFragment
@@ -28,6 +32,8 @@ class ApplicationActivity : AppCompatActivity() {
         setupToolbar()
         setupBottomNavigationView(navController)
         setupDestinationChangedListener(navController)
+
+        splashScreen.setKeepOnScreenCondition { false }
     }
 
     private fun setupBottomNavigationView(navController:NavController){

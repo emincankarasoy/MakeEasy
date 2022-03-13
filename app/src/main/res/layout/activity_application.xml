@@ -7,7 +7,7 @@
 
     </data>
     <LinearLayout
-        tools:context=".ui.view.ApplicationActivity"
+        tools:context=".ui.ApplicationActivity"
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:layout_width="match_parent">

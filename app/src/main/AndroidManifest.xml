@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MakeEasy">
 
-        <activity android:name=".ui.MainActivity"
+        <activity android:name=".ui.ApplicationActivity"
             android:exported="true"
             android:theme="@style/Theme.MakeEasy.Start">
             <intent-filter>
@@ -18,8 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.view.ApplicationActivity"/>
 
     </application>
 </manifest>
