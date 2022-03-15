@@ -10,4 +10,5 @@
     <string name="wallet_outcoming">OUTCOMING</string>
     <string name="wallet_toolbar_menu_add">Add</string>
     <string name="wallet_toolbar_menu_detail">Detail</string>
+    <string name="task_toolbar_menu_add">Add Task</string>
 </resources>

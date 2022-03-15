@@ -65,6 +65,7 @@ class ApplicationActivity : AppCompatActivity() {
                 //Task Fragment Tool Bar Configuration
                 R.id.taskFragment -> {
                     binding.applicationToolbar.menu.clear()
+                    binding.applicationToolbar.inflateMenu(R.menu.task_toolbar_menu)
                 }
                 //Profile Fragment Tool Bar Configuration
                 R.id.profileFragment -> {
