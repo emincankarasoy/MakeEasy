@@ -45,15 +45,15 @@ class WalletFragment : Fragment() {
         TabLayoutMediator(binding.walletTabLayout,binding.walletViewPager){ tab , position ->
             when(position){
                 0 -> {
-                    tab.text = "Account"
+                    tab.text = "ACCOUNT"
                     savedInstanceState?.putInt("walletState",0)
                 }
                 1 -> {
-                    tab.text = "Incoming"
+                    tab.text = "INCOMING"
                     savedInstanceState?.putInt("walletState",1)
                 }
                 2 -> {
-                    tab.text = "Outcoming"
+                    tab.text = "OUTCOMING"
                     savedInstanceState?.putInt("walletState",2)
                 }
             }

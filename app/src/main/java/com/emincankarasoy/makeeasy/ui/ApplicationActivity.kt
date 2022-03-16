@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
@@ -12,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.ActivityApplicationBinding
+import com.emincankarasoy.makeeasy.ui.view.WalletFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ApplicationActivity : AppCompatActivity() {

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="transaction"
+            type="com.emincankarasoy.makeeasy.data.model.Transaction" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp">
+
+        <View
+            android:id="@+id/recyclerItemWalletType"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            app:transaction="@{transaction}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/recyclerItemWalletCategoryName"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerItemWalletCategoryName"
+            android:translationZ="2dp"/>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="#3E7A7A7A"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/recyclerItemWalletType"
+            app:layout_constraintEnd_toEndOf="@id/recyclerItemWalletType"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/recyclerItemWalletCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/recyclerItemWalletType"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{transaction.category}"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="10dp"
+            android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/recyclerItemWalletTransactionDescription"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toStartOf="@id/recyclerItemWalletCategoryName"
+            app:layout_constraintTop_toBottomOf="@id/recyclerItemWalletCategoryName"
+            android:text="@{transaction.description}"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/recyclerItemWalletTransactionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/recyclerItemWalletTransactionDescription"
+            app:layout_constraintTop_toBottomOf="@id/recyclerItemWalletTransactionDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@{transaction.date}"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/recyclerItemWalletCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/recyclerItemWalletCategoryName"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerItemWalletCategoryName"
+            android:text="@{String.valueOf(transaction.count)+'$'}"
+            android:textAlignment="textEnd"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

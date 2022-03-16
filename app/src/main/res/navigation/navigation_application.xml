@@ -10,7 +10,7 @@
         android:id="@+id/homeFragment"
         android:name="com.emincankarasoy.makeeasy.ui.view.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home" />
 
     <fragment android:id="@+id/walletFragment"
         android:name="com.emincankarasoy.makeeasy.ui.view.WalletFragment"
@@ -26,7 +26,5 @@
         android:name="com.emincankarasoy.makeeasy.ui.view.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
-
-
 
 </navigation>
