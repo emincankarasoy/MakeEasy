@@ -9,13 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.data.model.Transaction
-import com.emincankarasoy.makeeasy.data.model.TransactionType
+import com.emincankarasoy.makeeasy.data.model.TransactionTypes
 import com.emincankarasoy.makeeasy.databinding.FragmentWalletIncomingBinding
 import com.emincankarasoy.makeeasy.ui.adapter.WalletRecyclerAdapter
-import java.time.Instant
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 class WalletIncomingFragment : Fragment() {
     private lateinit var binding:FragmentWalletIncomingBinding
@@ -37,29 +35,29 @@ class WalletIncomingFragment : Fragment() {
         binding.walletIncomingRecyclerView.layoutManager = LinearLayoutManager(context)
         recyclerAdapter.setTransactionList(
             arrayListOf(
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionTypes.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250)
             )
         )

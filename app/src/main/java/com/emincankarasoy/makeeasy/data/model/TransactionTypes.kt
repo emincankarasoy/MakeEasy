@@ -1,6 +1,6 @@
 package com.emincankarasoy.makeeasy.data.model
 
-enum class TransactionType{
+enum class TransactionTypes{
     INCOMING,
     OUTCOMING;
 }
