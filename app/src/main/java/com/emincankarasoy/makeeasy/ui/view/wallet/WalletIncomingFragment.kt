@@ -39,27 +39,27 @@ class WalletIncomingFragment : Fragment() {
             arrayListOf(
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
                 Transaction(1, "Restaurant",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market",TransactionType.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market",TransactionType.INCOMING,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250)
             )
         )
