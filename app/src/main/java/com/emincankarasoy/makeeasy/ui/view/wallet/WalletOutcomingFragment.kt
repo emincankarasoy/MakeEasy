@@ -36,29 +36,29 @@ class WalletOutcomingFragment : Fragment() {
 
         recyclerAdapter.setTransactionList(
             arrayListOf(
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250),
-                Transaction(1, "Restaurant", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Restaurant", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),350),
-                Transaction(1, "Market", TransactionTypes.OUTCOMING,"Deneme", LocalDateTime.now().format(
+                Transaction(1, "Market", TransactionTypes.OUTCOME,"Deneme", LocalDateTime.now().format(
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")),250)
             )
         )

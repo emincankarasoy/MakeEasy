@@ -49,11 +49,11 @@ class WalletFragment : Fragment() {
                     savedInstanceState?.putInt("walletState",0)
                 }
                 1 -> {
-                    tab.text = "INCOMING"
+                    tab.text = "INCOME"
                     savedInstanceState?.putInt("walletState",1)
                 }
                 2 -> {
-                    tab.text = "OUTCOMING"
+                    tab.text = "OUTCOME"
                     savedInstanceState?.putInt("walletState",2)
                 }
             }

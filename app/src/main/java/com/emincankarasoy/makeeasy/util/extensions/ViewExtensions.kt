@@ -7,10 +7,10 @@ import com.emincankarasoy.makeeasy.data.model.TransactionTypes
 
 fun View.setBackgroundColorWithTransactionType(transaction: Transaction){
     when(transaction.type){
-        TransactionTypes.INCOMING -> {
+        TransactionTypes.INCOME -> {
             this.setBackgroundResource(R.drawable.recycler_item_wallet_type_incoming)
         }
-        TransactionTypes.OUTCOMING -> {
+        TransactionTypes.OUTCOME -> {
             this.setBackgroundResource(R.drawable.recycler_item_wallet_type_outcoming)
         }
     }
