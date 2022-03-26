@@ -21,6 +21,5 @@ abstract class LocalDatabase : RoomDatabase(){
             context.applicationContext,LocalDatabase::class.java,"MakeEasy"
         ).build()
     }
-
     abstract fun transactionDao() : TransactionDAO
 }
