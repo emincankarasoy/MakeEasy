@@ -1,6 +1,8 @@
 package com.emincankarasoy.makeeasy.ui
 
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -14,7 +16,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.ActivityApplicationBinding
 import com.emincankarasoy.makeeasy.ui.view.WalletFragment
+import com.emincankarasoy.makeeasy.ui.view.wallet.TransactionFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlin.math.log
 
 class ApplicationActivity : AppCompatActivity() {
 
@@ -52,8 +56,8 @@ class ApplicationActivity : AppCompatActivity() {
         binding.applicationToolbar.setupWithNavController(navController,appBarConfiguration)
     }
 
-    private fun setupDestinationChangedListener(navController: NavController){
-        navController.addOnDestinationChangedListener{ _ , destination , _ ->
+    private fun setupDestinationChangedListener(navController: NavController) {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 //Home Fragment Tool Bar Configuration
                 R.id.homeFragment -> {
@@ -63,6 +67,7 @@ class ApplicationActivity : AppCompatActivity() {
                 R.id.walletFragment -> {
                     binding.applicationToolbar.menu.clear()
                     binding.applicationToolbar.inflateMenu(R.menu.wallet_toolbar_menu)
+                    binding.applicationToolbar.setOnMenuItemClickListener { it -> setWalletOptionsMenuListener(it)}
                 }
                 //Task Fragment Tool Bar Configuration
                 R.id.taskFragment -> {
@@ -77,4 +82,13 @@ class ApplicationActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun setWalletOptionsMenuListener(it : MenuItem) : Boolean{
+        if (it.itemId == R.id.walletToolbarMenuAdd){
+            TransactionFragment().show(supportFragmentManager,"Transaction Dialog Fragment")
+            return true
+        }
+        return false
+    }
+
 }

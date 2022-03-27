@@ -1,18 +1,8 @@
 package com.emincankarasoy.makeeasy.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.emincankarasoy.makeeasy.data.source.TransactionRepository
 
-class TransactionViewModel : ViewModel() {
-
-    init {
-        viewModelScope.launch(Dispatchers.IO){
-
-        }
-    }
-
-
+class TransactionViewModel(private val transactionRepository: TransactionRepository) : ViewModel() {
 
 }

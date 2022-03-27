@@ -19,7 +19,7 @@
             android:id="@+id/recyclerItemWalletType"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            app:transaction="@{transaction}"
+            app:transactionBackground="@{transaction}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/recyclerItemWalletCategoryName"
             app:layout_constraintBottom_toBottomOf="@id/recyclerItemWalletCategoryName"

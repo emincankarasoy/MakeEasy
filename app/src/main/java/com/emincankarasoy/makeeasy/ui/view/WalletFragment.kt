@@ -10,8 +10,8 @@ import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.FragmentWalletBinding
 import com.emincankarasoy.makeeasy.ui.adapter.WalletPagerAdapter
 import com.emincankarasoy.makeeasy.ui.view.wallet.WalletAccountFragment
-import com.emincankarasoy.makeeasy.ui.view.wallet.WalletIncomingFragment
-import com.emincankarasoy.makeeasy.ui.view.wallet.WalletOutcomingFragment
+import com.emincankarasoy.makeeasy.ui.view.wallet.WalletIncomeFragment
+import com.emincankarasoy.makeeasy.ui.view.wallet.WalletOutcomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class WalletFragment : Fragment() {
@@ -34,8 +34,8 @@ class WalletFragment : Fragment() {
         walletPagerAdapter = WalletPagerAdapter(
             arrayListOf(
                 WalletAccountFragment(),
-                WalletIncomingFragment(),
-                WalletOutcomingFragment()
+                WalletIncomeFragment(),
+                WalletOutcomeFragment()
                 ),this)
 
         binding.walletViewPager.adapter = walletPagerAdapter

@@ -5,7 +5,7 @@ import androidx.databinding.BindingAdapter
 import com.emincankarasoy.makeeasy.data.model.Transaction
 import com.emincankarasoy.makeeasy.util.extensions.setBackgroundColorWithTransactionType
 
-@BindingAdapter("app:transaction")
+@BindingAdapter("app:transactionBackground")
 fun viewBackgroundColorWithTransactionType(view: View,transaction: Transaction){
     view.setBackgroundColorWithTransactionType(transaction)
 }
