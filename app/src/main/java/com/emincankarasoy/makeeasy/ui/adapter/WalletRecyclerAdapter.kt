@@ -12,7 +12,7 @@ import com.emincankarasoy.makeeasy.databinding.RecyclerItemWalletBinding
 class WalletRecyclerAdapter() : RecyclerView.Adapter<WalletRecyclerAdapter.ViewHolder>() {
     private lateinit var binding: RecyclerItemWalletBinding
 
-    private var transactionList : ArrayList<Transaction> = arrayListOf()
+    var transactionList : ArrayList<Transaction> = arrayListOf()
 
     class ViewHolder(val binding: RecyclerItemWalletBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -28,9 +28,11 @@ class WalletRecyclerAdapter() : RecyclerView.Adapter<WalletRecyclerAdapter.ViewH
     override fun getItemCount(): Int = transactionList.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setTransactionList(transactionList: ArrayList<Transaction>){
+    fun setTransactionList(transactionList: List<Transaction>){
         this.transactionList.clear()
         this.transactionList.addAll(transactionList)
         notifyDataSetChanged()
     }
+
+
 }

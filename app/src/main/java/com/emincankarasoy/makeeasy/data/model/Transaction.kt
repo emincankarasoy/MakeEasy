@@ -3,7 +3,7 @@ package com.emincankarasoy.makeeasy.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "transactions")
 data class Transaction(
     var category:String,
     var description: String,

@@ -2,6 +2,7 @@ package com.emincankarasoy.makeeasy.ui.adapter
 
 import android.view.View
 import androidx.databinding.BindingAdapter
+import androidx.databinding.BindingMethod
 import com.emincankarasoy.makeeasy.data.model.Transaction
 import com.emincankarasoy.makeeasy.util.extensions.setBackgroundColorWithTransactionType
 

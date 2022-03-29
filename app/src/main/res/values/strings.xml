@@ -6,9 +6,15 @@
     <string name="menu_task">Task</string>
     <string name="menu_profile">Profile</string>
     <string name="wallet_accounts">Accounts</string>
-    <string name="wallet_incoming">INCOMING</string>
-    <string name="wallet_outcoming">OUTCOMING</string>
+    <string name="wallet_incoming">INCOME</string>
+    <string name="wallet_outcoming">OUTCOME</string>
     <string name="wallet_toolbar_menu_add">Add</string>
     <string name="wallet_toolbar_menu_detail">Detail</string>
     <string name="task_toolbar_menu_add">Add Task</string>
+    <string name="last_10_transaction">Last 10 Transaction</string>
+
+    <string-array name="transactionTypeArray">
+        <item>INCOME</item>
+        <item>OUTCOME</item>
+    </string-array>
 </resources>

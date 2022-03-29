@@ -14,10 +14,10 @@ fun Fragment.getViewModelFactory(repository: Repository) : ViewModelFactory{
 
 fun View.setBackgroundColorWithTransactionType(transaction: Transaction){
     when(transaction.type){
-        "Income" -> {
+        "INCOME" -> {
             this.setBackgroundResource(R.drawable.recycler_item_wallet_type_incoming)
         }
-        "Outcome" -> {
+        "OUTCOME" -> {
             this.setBackgroundResource(R.drawable.recycler_item_wallet_type_outcoming)
         }
     }

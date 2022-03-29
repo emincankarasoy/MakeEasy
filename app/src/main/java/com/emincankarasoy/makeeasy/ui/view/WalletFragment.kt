@@ -41,6 +41,7 @@ class WalletFragment : Fragment() {
         binding.walletViewPager.adapter = walletPagerAdapter
 
         binding.walletViewPager.currentItem = savedInstanceState?.getInt("walletState")?: 0
+        binding.walletViewPager.isUserInputEnabled = false
 
         TabLayoutMediator(binding.walletTabLayout,binding.walletViewPager){ tab , position ->
             when(position){

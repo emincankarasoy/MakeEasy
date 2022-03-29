@@ -82,5 +82,19 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_10_transaction"
+            android:layout_margin="@dimen/default_margin"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/last10RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_margin"/>
+
+
     </LinearLayout>
 </layout>
