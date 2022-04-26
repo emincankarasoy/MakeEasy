@@ -1,21 +1,17 @@
 package com.emincankarasoy.makeeasy.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.ActivityApplicationBinding
-import com.emincankarasoy.makeeasy.ui.view.WalletFragment
+import com.emincankarasoy.makeeasy.ui.view.task.TaskFragment
 import com.emincankarasoy.makeeasy.ui.view.wallet.TransactionFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.math.log
@@ -73,11 +69,11 @@ class ApplicationActivity : AppCompatActivity() {
                 R.id.taskFragment -> {
                     binding.applicationToolbar.menu.clear()
                     binding.applicationToolbar.inflateMenu(R.menu.task_toolbar_menu)
+                    binding.applicationToolbar.setOnMenuItemClickListener { it -> setTaskOptionsMenuListener(it)}
                 }
                 //Profile Fragment Tool Bar Configuration
                 R.id.profileFragment -> {
                     binding.applicationToolbar.menu.clear()
-
                 }
             }
         }
@@ -86,6 +82,14 @@ class ApplicationActivity : AppCompatActivity() {
     private fun setWalletOptionsMenuListener(it : MenuItem) : Boolean{
         if (it.itemId == R.id.walletToolbarMenuAdd){
             TransactionFragment().show(supportFragmentManager,"Transaction Dialog Fragment")
+            return true
+        }
+        return false
+    }
+
+    private fun setTaskOptionsMenuListener(it : MenuItem) : Boolean{
+        if(it.itemId == R.id.taskToolbarMenuAdd){
+            TaskFragment().show(supportFragmentManager,"Task Dialog Fragment")
             return true
         }
         return false

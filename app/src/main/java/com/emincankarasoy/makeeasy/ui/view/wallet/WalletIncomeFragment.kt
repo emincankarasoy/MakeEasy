@@ -1,6 +1,5 @@
 package com.emincankarasoy.makeeasy.ui.view.wallet
 
-import android.graphics.Canvas
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.data.source.TransactionRepository
 import com.emincankarasoy.makeeasy.databinding.FragmentWalletIncomingBinding

@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.databinding.FragmentWalletBinding
 import com.emincankarasoy.makeeasy.ui.adapter.WalletPagerAdapter
-import com.emincankarasoy.makeeasy.ui.view.wallet.WalletAccountFragment
 import com.emincankarasoy.makeeasy.ui.view.wallet.WalletIncomeFragment
 import com.emincankarasoy.makeeasy.ui.view.wallet.WalletOutcomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -33,7 +32,6 @@ class WalletFragment : Fragment() {
 
         walletPagerAdapter = WalletPagerAdapter(
             arrayListOf(
-                WalletAccountFragment(),
                 WalletIncomeFragment(),
                 WalletOutcomeFragment()
                 ),this)
@@ -46,14 +44,10 @@ class WalletFragment : Fragment() {
         TabLayoutMediator(binding.walletTabLayout,binding.walletViewPager){ tab , position ->
             when(position){
                 0 -> {
-                    tab.text = "ACCOUNT"
-                    savedInstanceState?.putInt("walletState",0)
-                }
-                1 -> {
                     tab.text = "INCOME"
                     savedInstanceState?.putInt("walletState",1)
                 }
-                2 -> {
+                1 -> {
                     tab.text = "OUTCOME"
                     savedInstanceState?.putInt("walletState",2)
                 }

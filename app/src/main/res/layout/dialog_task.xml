@@ -22,9 +22,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
             <ImageButton
-                android:id="@+id/transactionDialogDismissButton"
+                android:id="@+id/taskDialogDismissButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_round_close"
@@ -34,7 +33,7 @@
                 android:layout_marginHorizontal="10dp"/>
 
             <ImageButton
-                android:id="@+id/transactionDialogCheckButton"
+                android:id="@+id/taskDialogCheckButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_round_check"
@@ -44,19 +43,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:backgroundTint="@color/colorPrimary" />
 
-            <Spinner
-                android:id="@+id/transactionType"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/transactionDialogDismissButton"
-                app:layout_constraintEnd_toStartOf="@id/transactionDialogCheckButton"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/transactionDialogCheckButton"
+                app:layout_constraintTop_toBottomOf="@id/taskDialogCheckButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,10 +54,9 @@
                 android:padding="15dp">
 
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transaction Category" />
+                    android:text="Task title" />
 
                 <EditText
                     android:textSize="14sp"
@@ -78,13 +67,13 @@
                     android:paddingVertical="10dp"
                     android:paddingHorizontal="2dp"
                     android:background="@null"
-                    android:id="@+id/transactionCategoryText" />
+                    android:id="@+id/taskTitle" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Transaction Description" />
+                    android:text="Task description" />
 
                 <EditText
                     android:textSize="14sp"
@@ -94,14 +83,14 @@
                     android:singleLine="true"
                     android:paddingHorizontal="2dp"
                     android:paddingVertical="10dp"
-                    android:id="@+id/transactionDescription"
+                    android:id="@+id/taskDescription"
                     android:background="@null"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Transaction Date" />
+                    android:text="Task date" />
 
                 <EditText
                     android:textSize="14sp"
@@ -110,15 +99,14 @@
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
                     android:paddingVertical="10dp"
-                    android:paddingHorizontal="2dp"
                     android:background="@null"
-                    android:id="@+id/transactionDate" />
+                    android:id="@+id/taskDate" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Transaction Time" />
+                    android:text="Task time"/>
 
                 <EditText
                     android:textSize="14sp"
@@ -127,15 +115,14 @@
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
                     android:paddingVertical="10dp"
-                    android:paddingHorizontal="2dp"
                     android:background="@null"
-                    android:id="@+id/transactionTime" />
+                    android:id="@+id/taskTime" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Transaction Count"/>
+                    android:text="Add an event" />
 
                 <EditText
                     android:textSize="14sp"
@@ -143,15 +130,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:singleLine="true"
-                    android:paddingVertical="10dp"
                     android:paddingHorizontal="2dp"
+                    android:paddingVertical="10dp"
                     android:background="@null"
-                    android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:id="@+id/transactionCount" />
+                    android:id="@+id/taskEvent" />
 
             </LinearLayout>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

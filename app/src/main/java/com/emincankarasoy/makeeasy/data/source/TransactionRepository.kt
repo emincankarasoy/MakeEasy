@@ -27,5 +27,4 @@ class TransactionRepository(context: Context) : Repository {
     suspend fun deleteTransaction(transaction: Transaction){
         return transactionDAO.delete(transaction)
     }
-
 }
