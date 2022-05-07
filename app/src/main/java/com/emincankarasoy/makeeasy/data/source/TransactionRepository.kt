@@ -1,7 +1,9 @@
 package com.emincankarasoy.makeeasy.data.source
 
 import android.content.Context
+import android.util.Log
 import com.emincankarasoy.makeeasy.data.LocalDatabase
+import com.emincankarasoy.makeeasy.data.model.Task
 import com.emincankarasoy.makeeasy.data.model.Transaction
 
 class TransactionRepository(context: Context) : Repository {
@@ -16,6 +18,12 @@ class TransactionRepository(context: Context) : Repository {
         return true
     }
 
+    suspend fun addAll(transaction: List<Transaction>){
+        transactionDAO.insertAll(transaction).also {
+            Log.i("ROOM", "Insert All Completed!")
+        }
+    }
+
     suspend fun getIncomeTransactions() : List<Transaction>{
         return transactionDAO.getIncomeTransactions()
     }
@@ -24,7 +32,15 @@ class TransactionRepository(context: Context) : Repository {
         return transactionDAO.getOutcomeTransactions()
     }
 
+    suspend fun getAll() : List<Transaction>{
+        return transactionDAO.getALL()
+    }
+
     suspend fun deleteTransaction(transaction: Transaction){
         return transactionDAO.delete(transaction)
+    }
+
+    suspend fun deleteAll(){
+        transactionDAO.deleteAll()
     }
 }

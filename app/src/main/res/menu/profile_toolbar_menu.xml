@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/profileToolbarMenuDownload"
+        android:title="@string/task_toolbar_menu_add"
+        android:icon="@drawable/ic_round_cloud_download"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/profileToolbarMenuUpload"
+        android:title="@string/task_toolbar_menu_add"
+        android:icon="@drawable/ic_round_cloud_upload"
+        app:showAsAction="always"/>
+
+</menu>

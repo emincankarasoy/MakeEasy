@@ -9,6 +9,8 @@ import com.emincankarasoy.makeeasy.R
 import com.emincankarasoy.makeeasy.data.model.Task
 import com.emincankarasoy.makeeasy.data.model.Transaction
 import com.emincankarasoy.makeeasy.databinding.RecyclerItemTaskBinding
+import java.text.DateFormatSymbols
+import java.time.LocalDate
 
 class TaskRecyclerAdapter : RecyclerView.Adapter<TaskRecyclerAdapter.ViewHolder>() {
     private lateinit var binding: RecyclerItemTaskBinding
@@ -27,6 +29,10 @@ class TaskRecyclerAdapter : RecyclerView.Adapter<TaskRecyclerAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.taskVariable = taskList[position]
+        val dateVariables = taskList[position].date.split("-")
+        val dateFormat : DateFormatSymbols = DateFormatSymbols()
+        holder.binding.day.text = dateVariables[1]
+        holder.binding.date.text = dateFormat.months[dateVariables[1].toInt()-1].toString().subSequence(0,3)
     }
 
     override fun getItemCount(): Int = taskList.size

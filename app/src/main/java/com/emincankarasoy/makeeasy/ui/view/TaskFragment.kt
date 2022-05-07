@@ -1,15 +1,16 @@
 package com.emincankarasoy.makeeasy.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emincankarasoy.makeeasy.R
+import com.emincankarasoy.makeeasy.data.model.Task
 import com.emincankarasoy.makeeasy.data.source.TaskRepository
 import com.emincankarasoy.makeeasy.databinding.FragmentTaskBinding
 import com.emincankarasoy.makeeasy.ui.adapter.SwipeController
@@ -18,6 +19,10 @@ import com.emincankarasoy.makeeasy.ui.adapter.SwipeControllerDrawer
 import com.emincankarasoy.makeeasy.ui.adapter.TaskRecyclerAdapter
 import com.emincankarasoy.makeeasy.ui.viewmodel.TaskViewModel
 import com.emincankarasoy.makeeasy.util.ViewModelFactory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
 
 class TaskFragment : Fragment() {
     private lateinit var binding : FragmentTaskBinding
@@ -43,8 +48,9 @@ class TaskFragment : Fragment() {
         recyclerAdapter = TaskRecyclerAdapter()
         binding.taskRecyclerView.adapter = recyclerAdapter
         binding.taskRecyclerView.layoutManager = LinearLayoutManager(context)
-        taskViewModel.tasksLiveData.observe(viewLifecycleOwner){
-            recyclerAdapter.setTransactionList(it)
+
+        runBlocking {
+            recyclerAdapter.setTransactionList(taskViewModel.getAll())
         }
 
         swipeController = SwipeController(SwipeControllerActions(recyclerAdapter,taskViewModel),requireContext(),requireActivity().resources)

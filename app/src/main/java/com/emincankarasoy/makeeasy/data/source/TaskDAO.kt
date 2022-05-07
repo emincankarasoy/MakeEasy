@@ -8,6 +8,9 @@ interface TaskDAO {
     @Insert
     suspend fun add(task: Task) : Long
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(task : List<Task>)
+
     @Delete
     suspend fun delete(task: Task)
 
@@ -16,4 +19,7 @@ interface TaskDAO {
 
     @Query("SELECT * FROM `tasks`")
     suspend fun getAll() : List<Task>
+
+    @Query("DELETE FROM `tasks`")
+    suspend fun deleteAll()
 }

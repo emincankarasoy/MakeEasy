@@ -1,7 +1,10 @@
 package com.emincankarasoy.makeeasy.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
@@ -10,17 +13,20 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.emincankarasoy.makeeasy.R
+import com.emincankarasoy.makeeasy.data.source.CloudRepository
 import com.emincankarasoy.makeeasy.databinding.ActivityApplicationBinding
 import com.emincankarasoy.makeeasy.ui.view.task.TaskFragment
 import com.emincankarasoy.makeeasy.ui.view.wallet.TransactionFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlin.math.log
+import kotlinx.coroutines.DelicateCoroutinesApi
+import java.util.*
 
 class ApplicationActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityApplicationBinding
     private lateinit var navController : NavController
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
@@ -30,6 +36,14 @@ class ApplicationActivity : AppCompatActivity() {
 
         val navHost = supportFragmentManager.findFragmentById(R.id.applicationNavHostFragment) as NavHostFragment
         navController = navHost.navController
+
+        val sharedPreferences = getSharedPreferences("make_easy",MODE_PRIVATE)
+
+        if (sharedPreferences.getString("uuid","0") == "0"){
+            sharedPreferences.edit().putString("uuid",UUID.randomUUID().toString()).apply()
+        }
+
+        Log.i("UUID", sharedPreferences.getString("uuid","None").toString())
 
         setupToolbar()
         setupBottomNavigationView(navController)
@@ -74,6 +88,9 @@ class ApplicationActivity : AppCompatActivity() {
                 //Profile Fragment Tool Bar Configuration
                 R.id.profileFragment -> {
                     binding.applicationToolbar.menu.clear()
+                    binding.applicationToolbar.inflateMenu(R.menu.profile_toolbar_menu)
+                    binding.applicationToolbar.setOnMenuItemClickListener{it -> setProfileOptionsMenuListener(it)}
+
                 }
             }
         }
@@ -90,6 +107,28 @@ class ApplicationActivity : AppCompatActivity() {
     private fun setTaskOptionsMenuListener(it : MenuItem) : Boolean{
         if(it.itemId == R.id.taskToolbarMenuAdd){
             TaskFragment().show(supportFragmentManager,"Task Dialog Fragment")
+            return true
+        }
+        return false
+    }
+
+    private fun setProfileOptionsMenuListener(it : MenuItem) : Boolean{
+        val cloudRepository = CloudRepository(this)
+        if(it.itemId == R.id.profileToolbarMenuUpload){
+            AlertDialog.Builder(this).setTitle("Upload Data").setMessage("Are you sure you want to upload your data to cloud?")
+                .setPositiveButton("Yes") { _, _ ->
+                    cloudRepository.syncDataOnCloud()
+                }.setNegativeButton("No"){dialog,_ ->
+                    dialog.cancel()
+                }.show()
+            return true
+        }else if(it.itemId == R.id.profileToolbarMenuDownload){
+            AlertDialog.Builder(this).setTitle("Download Data").setMessage("Are you sure you want to download your data from cloud? ")
+                .setPositiveButton("Yes") { _, _ ->
+                    cloudRepository.syncDataOnLocal()
+                }.setNegativeButton("No"){dialog,_ ->
+                    dialog.cancel()
+                }.show()
             return true
         }
         return false
